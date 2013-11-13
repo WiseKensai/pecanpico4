@@ -1,0 +1,22 @@
+GBL:
+GBO:
+GBP:
+GBS:
+GML:
+GTL:
+GTO:
+GTP:
+GTS:
+TXT:
+-----
+
+Device:  Gerber_rs274x
+CMP (Component):   Top, Pads, Vias
+SOL (Solder): Bottom, Pads, Vias
+PLC (Component Silk): Dimension, tPlace, tNames
+PLS (Solder Silk): Dimension, bPlace, bNames
+STC (Compoent Stop): tStop
+STS (Solder Stop): bStop
+
+Device: Excellon
+NCD (Drill File): drills, holes    Select  
