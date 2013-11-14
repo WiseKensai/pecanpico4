@@ -1,22 +1,33 @@
+(copper)
 GBL:
-GBO:
-GBP:
-GBS:
-GML:
 GTL:
+
+(silkscreen)
+GBO:
 GTO:
+
+(solder)
+GBP:
 GTP:
+
+(solder mask)
+GBS:
 GTS:
+
+(dimensions)
+GML:
+
+(holes)
 TXT:
 -----
 
 Device:  Gerber_rs274x
-CMP (Component):   Top, Pads, Vias
-SOL (Solder): Bottom, Pads, Vias
+CMP (Component copper):   Top, Pads, Vias
+SOL (Solder copper): Bottom, Pads, Vias
 PLC (Component Silk): Dimension, tPlace, tNames
 PLS (Solder Silk): Dimension, bPlace, bNames
-STC (Compoent Stop): tStop
-STS (Solder Stop): bStop
+STC (Compoent Stop - solder mask): tStop
+STS (Solder Stop - solder mask): bStop
 
 Device: Excellon
 NCD (Drill File): drills, holes    Select  
