@@ -1,25 +1,35 @@
+In the gerber files from Thomas....
+-------
+
 (copper)
-GBL:
-GTL:
+GBL: Bottom, Pads, Vias
+GTL: Top, Pads, Vias
 
 (silkscreen)
-GBO:
-GTO:
+GBO: bPlace, bTest
+GTO: tPlace, tTest
 
 (solder)
-GBP:
-GTP:
+GBP: bCream
+GTP: tCream,
 
 (solder mask)
-GBS:
-GTS:
+GBS: bStop
+GTS: tStop
 
 (dimensions)
-GML:
+GML: Dimension
 
 (holes)
-TXT:
------
+TXT: Holes, Drills
+
+Unused layers:
+bOrigins, tOrigins, tNames, bNames, tValues, bValues, tGlue, bGlue, tKeepout, bKeepout, tRestrict, bRestrict, Milling, Measures, Document, Reference, tDocu, bDocu, ... all the rest
+
+
+
+
+----- Notes from youtube -----
 
 Device:  Gerber_rs274x
 CMP (Component copper):   Top, Pads, Vias
