@@ -8,10 +8,10 @@
 </settings>
 <grid distance="0.5" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="no" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="no" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="no" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
@@ -1645,12 +1645,12 @@
 <rectangle x1="4.21005" y1="22.89175" x2="4.26085" y2="22.90445" layer="38"/>
 <text x="3.1242" y="20.9169" size="1.016" layer="37">UM1</text>
 <text x="5.9309" y="7.1374" size="1.27" layer="37" rot="R90">UM1</text>
-<text x="23.5712" y="27.0764" size="0.8128" layer="37" rot="R359.8">Ursus Maximus 1</text>
-<text x="8.0264" y="26.6192" size="0.8128" layer="38" rot="MR0">Ursus
-Maximus</text>
 <text x="17.5387" y="26.9621" size="1.016" layer="37" font="vector">W2CXM</text>
 <text x="32.9438" y="26.4541" size="0.8128" layer="38" rot="MR0">If found, please contact
 balloon@w2cxm.org.</text>
+<text x="7.874" y="26.7208" size="0.8128" layer="38" rot="MR0">Ursus
+Minimus</text>
+<text x="23.5585" y="27.051" size="0.8128" layer="37">Ursus Minimus 1</text>
 </plain>
 <libraries>
 <library name="SparkFun">
