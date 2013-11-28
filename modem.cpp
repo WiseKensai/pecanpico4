@@ -319,3 +319,45 @@ void modem_debug()
   } 
 }
 #endif
+
+#ifdef CWBEACON
+
+void
+modem_setupCW() {    // Set up timer2 parameters for CW mode
+}
+
+void
+modem_sendCW_char(char c) {    // Send a single character via CW
+  
+}
+
+
+void
+modem_sendCW(char *message) {
+  while (modem_busy()) {
+    // Burn time, allowing the ISR to flush the queued data using modem tones.
+  }
+  
+  // By the time we get here, there should be no queued data to send.  Now we can hijack the Timer2 interrupt so that we can send CW.
+  
+  modem_setupCW();      // Override timer parameters to do CW
+ 
+  // Set frequency
+  // Engage PTT
+  
+  while (*message != '\0') {
+    modem_sendCW_char(*message);
+    message++;
+  }
+  
+  // Release PTT
+  // Reset frequency
+  
+  modem_setup();        // Restore timer parameters for modem use
+  
+  
+
+  
+}
+
+#endif /* CWBEACON */

@@ -260,6 +260,16 @@ void loop()
     }
   }
   
+  #ifdef CWBEACON
+  // W2CXM Mods
+  if (wd_counter >= (int)(CW_PERIOD_SECONDS / 8)) {                      // Is it time to send CW (8 second granularity)?
+    // XXX  - Use barometer altitude rather than GPS?  Is this from sea level or actual?  Hmmm
+    if ((gps_altitude < CW_ALTITUDE) || (newPositionStillUnknown)) {     // If we're near the ground or lost, send CW.  Don't send at altitude.  
+      modem_sendCW(CWSTRING);                                            // Send the beacon via CW for possible foxhunting.
+    }
+  }
+  #endif /* CWBEACON */
+  
   if (Serial.available() && newPositionStillUnknown) 
 //  if (Serial.available()) 
   {

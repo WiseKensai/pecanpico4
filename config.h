@@ -18,7 +18,8 @@
 #ifndef __CONFIG_H__
 #define __CONFIG_H__
 
-
+// Define local W2CXM mods - adding CW subroutines.  Undefine to go back to stock code.
+#define CWBEACON
 // --------------------------------------------------------------------------
 // THIS IS THE TRACKUINO FIRMWARE CONFIGURATION FILE. YOUR CALLSIGN AND
 // OTHER SETTINGS GO HERE.
@@ -41,8 +42,8 @@
 // - Home:       0
 // - IGate:      5
 //
-#define S_CALLSIGN      "KT5TK"
-#define S_CALLSIGN_ID   4
+#define S_CALLSIGN      "W2CXM"
+#define S_CALLSIGN_ID   11
 
 // Destination callsign: APRS (with SSID=0) is usually okay.
 //#define D_CALLSIGN      "APZ"  // APZ = Experimental 
@@ -80,7 +81,7 @@
 // might want to keep this short. The longer the packet, the more vulnerable
 // it is to noise. 
 //#define APRS_COMMENT    "http://w5acm.net"
-#define APRS_COMMENT    "http://tkrahn.net"
+#define APRS_COMMENT    "http://w2cxm.org"
 //#define APRS_COMMENT    " Pecan Dev"
 
 
@@ -115,6 +116,16 @@
 // APRS_PERIOD is here replaced with APRS_PERIOD_SECONDS because we use the 
 // watchdog timer to save more power.
 #define APRS_PERIOD_SECONDS 120
+
+#ifdef CWBEACON
+// Frequency upon which to send CW.  Pick a safe Sinplex frequency in the same band as the APRS frequency being used.
+#define CW_RADIO_FREQUENCY   147555000UL
+// Interval at which to send CW (note this will have about an 8 second granularity, based on the watchdog timer)
+#define CW_PERIOD_SECONDS 30
+// CWSTRING is what will be beaconed out every CW_PERIOD_SECONDSish on the CW frequency
+#define CWSTRING "W2CXM/11"
+#define CW_ALTITUDE 100.0  // Minimum altitude in meters at which we will beacon CW (float value)                                 
+#endif /* CWBEACON */
 
 // Set any value here (in ms) if you want to delay the first transmission
 // after resetting the device.
@@ -244,6 +255,9 @@
 #define ADF7012_CRYSTAL_DIVIDER 15    // [1..15]
 
 #define ADF7012_TX_DATA_PIN 7
+
+
+
 
 // Some radios are frequency agile. Therefore we can set the (default) frequency here:
 #define RADIO_FREQUENCY   144390000UL

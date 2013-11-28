@@ -33,4 +33,8 @@ int modem_busy();
 void modem_debug();
 #endif
 
+#ifdef CWBEACON
+void modem_sendCW();
+#endif /* CWBEACON */
+
 #endif
