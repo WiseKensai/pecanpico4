@@ -205,6 +205,24 @@ void setup()
   modem_setup();
 //  buzzer_setup();
   sensors_setup();
+  
+// w2cxm - after sensor_setup() the Wire protocol is initialized.
+
+delay(500);
+blink3();
+delay(500);
+blink3();
+delay(500);
+blink3();
+delay(500);
+blink3();
+Wire.beginTransmission(I2C_PRINT_SLAVE);
+Wire.write("In initialization\n");
+Wire.endTransmission();
+blink3();
+
+// w2cxm
+
   gps_setup();
 
   // Schedule the next transmission within APRS_DELAY ms
@@ -235,6 +253,8 @@ void loop()
     wd_counter = 0;
     newPositionStillUnknown = true;
     // Now we need the GPS again to find the new position. 
+    
+#ifdef SKIP_GPS
     if(gpsIsOn == false)
     {  
       pinMode(GPS_POWER_PIN, OUTPUT);    // In case this config was forgotten in a brown out 
@@ -292,8 +312,9 @@ void loop()
 //      else
 //        buzzer_on();
     }
-
+#endif SKIP_GPS
   } 
+
   else 
   {
     power_save();

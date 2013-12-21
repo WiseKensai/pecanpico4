@@ -19,7 +19,7 @@
 #define __CONFIG_H__
 
 // Define local W2CXM mods - adding CW subroutines.  Undefine to go back to stock code.
-#define CWBEACON
+// #define CWBEACON
 // --------------------------------------------------------------------------
 // THIS IS THE TRACKUINO FIRMWARE CONFIGURATION FILE. YOUR CALLSIGN AND
 // OTHER SETTINGS GO HERE.
@@ -115,7 +115,8 @@
 
 // APRS_PERIOD is here replaced with APRS_PERIOD_SECONDS because we use the 
 // watchdog timer to save more power.
-#define APRS_PERIOD_SECONDS 120
+// mqh/w2cxm - dialed down from 120
+#define APRS_PERIOD_SECONDS 16
 
 #ifdef CWBEACON
 // Frequency upon which to send CW.  Pick a safe Sinplex frequency in the same band as the APRS frequency being used.
@@ -126,6 +127,8 @@
 #define CWSTRING "W2CXM/11"
 #define CW_ALTITUDE 100.0  // Minimum altitude in meters at which we will beacon CW (float value)                                 
 #endif /* CWBEACON */
+#define I2C_PRINT_SLAVE  99
+
 
 // Set any value here (in ms) if you want to delay the first transmission
 // after resetting the device.
@@ -260,7 +263,8 @@
 
 
 // Some radios are frequency agile. Therefore we can set the (default) frequency here:
-#define RADIO_FREQUENCY   144390000UL
+#define RADIO_FREQUENCY    147555000UL
+//#define RADIO_FREQUENCY   144390000UL
 //#define RADIO_FREQUENCY   432900000UL
 //#define RADIO_FREQUENCY   223390000UL
 
